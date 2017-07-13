@@ -38,8 +38,13 @@ grad = zeros(size(theta));
 
 
 
+h = sigmoid(X * theta);
+J = sum(y.*log(h) + (ones(m,1) - y).*log(ones(m,1) - h)) * -1 / m + lambda * sum(theta(2:size(theta)).^2) / 2 / m;
 
 
+grad = transpose(X) * (h - y) + theta.*lambda;
+grad(1) = sum((h - y).*X(:,1));
+grad = grad./m;
 
 
 
