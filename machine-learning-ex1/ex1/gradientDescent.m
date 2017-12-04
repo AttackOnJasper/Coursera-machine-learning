@@ -22,12 +22,6 @@ for iter = 1:num_iters
     theta(1,1) = theta(1,1) - alpha * sum(d1) / m;
     theta(2,1) = theta(2,1) - alpha * sum(d2) / m;
 
-
-
-
-
-
-
     % ============================================================
 
     % Save the cost J in every iteration    
